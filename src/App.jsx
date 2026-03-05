@@ -3,6 +3,7 @@ import Temperature from "./pages/Temperature"
 import Statistics from "./pages/Statistics"
 import Home from "./pages/Home"
 import Layout from "./Layout"
+import "./styles/main.sass"
 
 function App() {
 

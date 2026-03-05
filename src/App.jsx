@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
-import Layout from "./Layout"
+import Temperature from "./pages/Temperature"
+import Statistics from "./pages/Statistics"
 import Home from "./pages/Home"
+import Layout from "./Layout"
 
 function App() {
 
@@ -11,6 +13,14 @@ function App() {
 				{
 					path: "/",
 					element: <Home />
+				},
+				{
+					path: "/temp",
+					element: <Temperature />
+				},
+				{
+					path: "/stat",
+					element: <Statistics />
 				}
 			]
 		}

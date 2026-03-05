@@ -1,0 +1,26 @@
+// USES
+@use "./_colors.sass" as var
+
+// FOOTER STYLING
+.bottom-content
+	display: grid
+	justify-items: center
+	grid-template-columns: 1fr 1fr 1fr 1fr
+
+	&__link
+		display: flex
+		align-items: center
+		transition: color 0.3s
+		color: var.$special-icon-color
+
+		&.active
+			color: var.$special-background-color
+
+	&__icon
+		height: 30px
+
+		&-second
+			height: 12px
+
+	& .flexed
+		transform: translateX(-50%)

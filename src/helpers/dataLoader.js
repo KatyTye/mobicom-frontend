@@ -1,5 +1,6 @@
-import weather from "../assets/jsons/weather.json";
 import statistics from "../assets/jsons/statistics.json";
+import weather from "../assets/jsons/weather.json";
+import rooms from "../assets/jsons/rooms.json";
 
 function getHeaderDate(type) {
 	const date = new Date();
@@ -55,6 +56,8 @@ export default async function dataLoader() {
 		returnData.weather = weather
 		returnData.statistics = statistics
 	}
+
+	returnData.rooms = rooms
 
 	console.log(returnData)
 

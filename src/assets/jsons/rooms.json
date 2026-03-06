@@ -1,0 +1,38 @@
+[
+	{
+		"name": "Soveværelse",
+		"heat": [
+			"Radiator"
+		],
+		"lights": []
+	},
+	{
+		"name": "Stue",
+		"heat": [
+			"Fan Coil"
+		],
+		"lights": [
+			"Alt lys",
+			"Loftlampe",
+			"Bordlampe 1",
+			"Bordlampe 2"
+		]
+	},
+	{
+		"name": "Badeværelse",
+		"heat": [
+			"Gulvvarme"
+		],
+		"lights": []
+	},
+	{
+		"name": "Køkken",
+		"heat": [
+			"Fan Coil"
+		],
+		"lights": [
+			"Køkkenbord",
+			"Loftlampe"
+		]
+	}
+]

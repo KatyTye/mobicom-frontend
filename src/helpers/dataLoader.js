@@ -5,7 +5,6 @@ function getHeaderDate(type) {
 	const date = new Date();
 
 	if (type === "from") {
-		// Move one day back safely (handles month/year changes)
 		date.setDate(date.getDate() - 1);
 	}
 
@@ -56,6 +55,8 @@ export default async function dataLoader() {
 		returnData.weather = weather
 		returnData.statistics = statistics
 	}
+
+	console.log(returnData)
 
 	return returnData
 }

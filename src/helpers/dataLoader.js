@@ -1,35 +1,61 @@
 import weather from "../assets/jsons/weather.json";
 import statistics from "../assets/jsons/statistics.json";
 
+function getHeaderDate(type) {
+	const date = new Date();
+
+	if (type === "from") {
+		// Move one day back safely (handles month/year changes)
+		date.setDate(date.getDate() - 1);
+	}
+
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, "0");
+	const day = String(date.getDate()).padStart(2, "0");
+
+	return `${year}-${month}-${day}`;
+}
+
 export default async function dataLoader() {
 	let returnData = {}
 
-	// try {
-	// 	const weather = await fetch("https://exercise.mobicom-pro.com/api/weather", {
-	// 		method: "GET",
-	// 		headers: {
-	// 			"Authorization": `Bearer ${import.meta.env.VITE_TOKEN}`,
-	// 			"Content-Type": "application/json",
-	// 		}
-	// 	})
-	// 	const weatherData = await weather.json();
+	try {
+		const headers = {
+			Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
+			"Content-Type": "application/json",
+		}
 
-	// 	const statistics = await fetch("https://exercise.mobicom-pro.com/api/statistics", {
-	// 		method: "GET",
-	// 		headers: {
-	// 			"Authorization": `Bearer ${import.meta.env.VITE_TOKEN}`,
-	// 			"Content-Type": "application/json",
-	// 		}
-	// 	})
-	// 	const statisticsData = await statistics.json();
+		const from = getHeaderDate("from")
+		const to = getHeaderDate("to")
 
-	// 	returnData.weather = weatherData
-	// 	returnData.statistics = statisticsData
+		const API_BASE = "https://exercise.mobicom-pro.com/api"
 
-	// } catch (err) {
-	returnData.weather = weather
-	returnData.statistics = statistics
-	// }
+		const weatherUrl = `${API_BASE}/weather`
+
+		const statisticsUrl = new URL(`${API_BASE}/statistics`)
+		statisticsUrl.search = new URLSearchParams({
+			device_id: 25,
+			from,
+			to,
+		}).toString()
+
+		const [weatherRes, statisticsRes] = await Promise.all([
+			fetch(weatherUrl, { headers }),
+			fetch(statisticsUrl, { headers }),
+		])
+
+		const [weatherData, statisticsData] = await Promise.all([
+			weatherRes.json(),
+			statisticsRes.json(),
+		])
+
+		returnData.weather = weatherData
+		returnData.statistics = statisticsData
+
+	} catch (err) {
+		returnData.weather = weather
+		returnData.statistics = statistics
+	}
 
 	return returnData
 }

@@ -1,8 +1,14 @@
 [
 	{
-		"date": "2026-01-14",
-		"kwh_usage": 29.3,
-		"total_price": 73.25,
+		"date": "2026-03-05",
+		"kwh_usage": 29.33,
+		"total_price": 73.33,
+		"currency": "Kr."
+	},
+	{
+		"date": "2026-03-06",
+		"kwh_usage": 35.15,
+		"total_price": 87.88,
 		"currency": "Kr."
 	}
 ]

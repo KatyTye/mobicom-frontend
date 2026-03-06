@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import Temperature from "./pages/Temperature"
+import dataLoader from "./helpers/dataLoader"
 import Statistics from "./pages/Statistics"
 import Home from "./pages/Home"
 import Layout from "./Layout"
@@ -10,6 +11,8 @@ function App() {
 	const browserRouter = createBrowserRouter([
 		{
 			element: <Layout />,
+			loader: dataLoader,
+			hydrateFallbackElement: <p>Loading...</p>,
 			children: [
 				{
 					path: "/",

@@ -7,7 +7,9 @@ export default function Layout() {
 	return (
 		<div id="phone-screen">
 			<Header />
-			<Outlet />
+			<main className="main-content">
+				<Outlet />
+			</main>
 			<Footer />
 		</div>
 	)

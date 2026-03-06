@@ -10,7 +10,7 @@ function App() {
 
 	const browserRouter = createBrowserRouter([
 		{
-			id: "weather",
+			id: "main",
 			element: <Layout />,
 			loader: dataLoader,
 			hydrateFallbackElement: <p>Loading...</p>,

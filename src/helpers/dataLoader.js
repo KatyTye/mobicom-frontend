@@ -1,24 +1,35 @@
-import backup from "../assets/jsons/weather.json";
+import weather from "../assets/jsons/weather.json";
+import statistics from "../assets/jsons/statistics.json";
 
 export default async function dataLoader() {
+	let returnData = {}
+
 	// try {
-	// 	const response = await fetch("https://exercise.mobicom-pro.com/api/weather", {
+	// 	const weather = await fetch("https://exercise.mobicom-pro.com/api/weather", {
 	// 		method: "GET",
 	// 		headers: {
 	// 			"Authorization": `Bearer ${import.meta.env.VITE_TOKEN}`,
 	// 			"Content-Type": "application/json",
-	// 		},
-	// 	});
+	// 		}
+	// 	})
+	// 	const weatherData = await weather.json();
 
-	// 	if (!response.ok) {
-	// 		throw new Error("API request failed");
-	// 	}
+	// 	const statistics = await fetch("https://exercise.mobicom-pro.com/api/statistics", {
+	// 		method: "GET",
+	// 		headers: {
+	// 			"Authorization": `Bearer ${import.meta.env.VITE_TOKEN}`,
+	// 			"Content-Type": "application/json",
+	// 		}
+	// 	})
+	// 	const statisticsData = await statistics.json();
 
-	// 	const data = await response.json();
-	// 	return data.result;
+	// 	returnData.weather = weatherData
+	// 	returnData.statistics = statisticsData
 
 	// } catch (err) {
-	// 	console.error("Could not load data, using backup json.", err);
-	return backup;
+	returnData.weather = weather
+	returnData.statistics = statistics
 	// }
+
+	return returnData
 }

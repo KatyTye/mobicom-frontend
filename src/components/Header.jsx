@@ -4,18 +4,19 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 
 export default function Header() {
-	const [pageTitle, setPageTitle] = useState("");
-	const location = useLocation();
+	const [hiddenSidebar, setHiddenSidebar] = useState(true)
+	const [pageTitle, setPageTitle] = useState("")
+	const location = useLocation()
 
 	useEffect(() => {
 		if (location.pathname === "/") {
-			setPageTitle("Smart Home");
+			setPageTitle("Smart Home")
 		} else if (location.pathname === "/temp") {
-			setPageTitle("Varme");
+			setPageTitle("Varme")
 		} else if (location.pathname === "/stat") {
-			setPageTitle("Statistik");
+			setPageTitle("Statistik")
 		} else {
-			setPageTitle("404");
+			setPageTitle("404")
 		}
 	}, [location.pathname]);
 
@@ -27,7 +28,7 @@ export default function Header() {
 				</Link>
 			);
 		} else if (location.pathname === "/") {
-			return <PiList className="top-content__sidebar" />;
+			return <PiList className="top-content__sidebar" onClick={() => setHiddenSidebar(false)} />;
 		}
 
 		return <div></div>;
@@ -47,7 +48,8 @@ export default function Header() {
 				)}
 			</header>
 
-			<div className="side-bar">
+			<div id="side-bar" className={(hiddenSidebar == true && "hidden")}>
+				<div className="side-bar__close" onClick={() => setHiddenSidebar(true)} />
 				<p>Sidebar</p>
 			</div>
 		</>

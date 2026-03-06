@@ -13,21 +13,21 @@ export default function ModeSettings() {
 			</h2>
 
 			<ul className="main-content__box-list">
-				<li className={"main-content__box-list-item " + (mode == 1 && "active")}
+				<li className={"main-content__box-list-item" + (mode == 1 && " active" || "")}
 					onClick={() => setMode(1)}>
 					<BsHouse className="item-icon" />
 
 					<p className="item-name">Hjemme</p>
 				</li>
 
-				<li className={"main-content__box-list-item " + (mode == 2 && "active")}
+				<li className={"main-content__box-list-item" + (mode == 2 && " active" || "")}
 					onClick={() => setMode(2)}>
 					<IoLocationOutline className="item-icon" />
 
 					<p className="item-name">Ude</p>
 				</li>
 
-				<li className={"main-content__box-list-item " + (mode == 3 && "active")}
+				<li className={"main-content__box-list-item" + (mode == 3 && " active" || "")}
 					onClick={() => setMode(3)}>
 					<GiNightSleep className="item-icon" />
 

@@ -3,8 +3,7 @@ import { BsHouse } from "react-icons/bs"
 import { GiNightSleep } from "react-icons/gi"
 import { IoLocationOutline } from "react-icons/io5"
 
-export default function ModeSettings() {
-	const [mode, setMode] = useState(1)
+export default function ModeSettings({ mode, setMode }) {
 
 	return (
 		<section className="main-content__box">

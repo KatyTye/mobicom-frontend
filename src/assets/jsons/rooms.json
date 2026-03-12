@@ -1,6 +1,7 @@
 [
 	{
 		"name": "Soveværelse",
+		"icon": "bed.svg",
 		"heat": [
 			"Radiator"
 		],
@@ -8,6 +9,7 @@
 	},
 	{
 		"name": "Stue",
+		"icon": "sofa.svg",
 		"heat": [
 			"Fan Coil"
 		],
@@ -20,6 +22,7 @@
 	},
 	{
 		"name": "Badeværelse",
+		"icon": "bath.svg",
 		"heat": [
 			"Gulvvarme"
 		],
@@ -27,6 +30,7 @@
 	},
 	{
 		"name": "Køkken",
+		"icon": "kitchen.svg",
 		"heat": [
 			"Fan Coil"
 		],

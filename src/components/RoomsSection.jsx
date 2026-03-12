@@ -17,7 +17,7 @@ export default function RoomsSection({ src }) {
 			<ul className="main-content__box-list">
 				{src.rooms.map((room, index) => {
 					return <li key={room.name + index} className="main-content__box-list-item">
-						<img src={location.host + "/icons/" + room.icon}
+						<img src={location.protocol + "//" + location.host + "/icons/" + room.icon}
 							alt="Ikon" className="item-icon" />
 
 						<p className="item-name">{room.name}</p>

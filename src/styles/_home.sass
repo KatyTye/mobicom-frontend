@@ -1,0 +1,97 @@
+// USES
+@use "./_colors.sass" as var
+
+// SECTIONS
+.main-content__box
+
+	&-title, &-title-mode
+		font-size: 14px
+		margin-left: 10px
+		font-weight: normal
+		margin: 25px 0 10px 0
+		grid-template-columns: 1fr 1fr
+
+		&
+			display: grid
+
+		& span:last-of-type
+			cursor: pointer
+			font-size: 12px
+			margin-left: auto
+			width: fit-content
+			align-items: center
+			display: inline-flex
+
+	&-holder, &-list-item
+		padding: 10px
+		display: flex
+		border-radius: 10px
+		box-shadow: 0px 0px 10px -5px black
+		background: var.$secondary-background-color
+
+	&-holder
+		align-items: center
+
+	&-text
+		margin-left: 10px
+		color: var.$secondary-text-color
+
+	&-list
+		gap: 20px
+		display: flex
+
+		&-mode
+			gap: 20px
+			display: grid
+			grid-template-columns: 1fr 1fr 1fr
+
+			& li
+				cursor: pointer
+				justify-content: center
+				transition: background 0.3s, color 0.3s
+
+				&.active
+					cursor: default
+					color: var.$special-text-color
+					background: var.$special-background-color
+
+		&-item
+			display: flex
+			align-items: center
+			color: var.$secondary-text-color
+
+			& .item-name
+				color: inherit
+				font-size: 13px
+				margin-left: 10px
+
+			& .item-icon
+				width: 23px
+				height: auto
+				color: inherit
+
+	&-multi-text
+		display: inherit
+		margin-left: auto
+		text-align: right
+		flex-direction: column
+
+		& .top-text
+			font-size: 24px
+
+			&__small
+				margin-left: 5px
+				font-size: 14px
+				color: var.$secondary-text-color
+
+		& .bottom-text
+			font-size: 12px
+			color: var.$green-text-color
+
+	&-icon
+		width: auto
+		height: 35px
+		padding: 5px
+		border-radius: 10px
+		color: var.$special-text-color
+		background: var.$special-background-color

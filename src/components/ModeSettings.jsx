@@ -8,11 +8,11 @@ export default function ModeSettings() {
 
 	return (
 		<section className="main-content__box">
-			<h2 className="main-content__box-title">
+			<h2 className="main-content__box-title-mode">
 				Forudindstillet
 			</h2>
 
-			<ul className="main-content__box-list">
+			<ul className="main-content__box-list-mode">
 				<li className={"main-content__box-list-item" + (mode == 1 && " active" || "")}
 					onClick={() => setMode(1)}>
 					<BsHouse className="item-icon" />

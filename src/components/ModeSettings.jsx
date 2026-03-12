@@ -1,9 +1,10 @@
-import { useState } from "react"
-import { BsHouse } from "react-icons/bs"
-import { GiNightSleep } from "react-icons/gi"
 import { IoLocationOutline } from "react-icons/io5"
+import { useOutletContext } from "react-router"
+import { GiNightSleep } from "react-icons/gi"
+import { BsHouse } from "react-icons/bs"
 
-export default function ModeSettings({ mode, setMode }) {
+export default function ModeSettings() {
+	const { mode, setMode } = useOutletContext()
 
 	return (
 		<section className="main-content__box">

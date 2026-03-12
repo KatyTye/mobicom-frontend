@@ -48,7 +48,7 @@ export default function Header() {
 				)}
 			</header>
 
-			<div id="side-bar" className={(hiddenSidebar == true && "hidden")}>
+			<div id="side-bar" className={(hiddenSidebar == true && "hidden" || "showed")}>
 				<div className="side-bar__close" onClick={() => setHiddenSidebar(true)} />
 				<p>Sidebar</p>
 			</div>
